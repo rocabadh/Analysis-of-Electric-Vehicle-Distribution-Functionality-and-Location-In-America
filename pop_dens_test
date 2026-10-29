@@ -13,3 +13,5 @@ print(df.head(15))
 #checking the column names
 print(df.columns)
 print(df[['County Name', 'Population Density 2026']].head(5)) # & df['Population Density 2026'].head(5))
+
+#I messed something up
