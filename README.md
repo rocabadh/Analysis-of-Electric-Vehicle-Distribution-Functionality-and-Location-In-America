@@ -39,4 +39,43 @@ The dataset that is selected is called “Electric Vehicle Population Data”. T
 
 We are performing an analysis of electric vehicles in Washington in order to make larger determinations about general trends in electric vehicles in the United States. By analyzing this data we can better understand the reception of EVs in the US including adoption rates, the effect of charging capabilities, and the relative growth of hybrid and full EV vehicle populations. The methods in this study are generally simple and align with common statistical practices.
 
+
 ## Implementation 
+
+To find the relationship between population density and electric vehicles per person, we will refer to both data sets. We expect that higher population densities will correlate with higher electric vehicle ownership. To study this, we will bin vehicles into their corresponding regions and then bin regions into population densities. There will be three curves: region vs population density, region vs hybrid vehicles, and region vs electric vehicles. We expect that two of these curves, after being normalized, will look very similar to each other. To examine their agreement, we will run a chi-squared analysis of the population density and hybrid vehicles plots, and the population density and electric vehicles plots, and then compare chi-square values. 
+
+We also want to examine the relationship between electric range and popular vehicles, to see if range is a contributing factor to purchasing electric vehicles. We suspect a positive correlation between the two data sets. To examine this relationship, we will bin popularity based on purchases (i.e. the number of current models) for each model. We will also bin models according to their ranges. The two graphs will include models vs. popularity, and models vs. range. These two graphs will be compared with a chi-squared analysis to see their agreement. 
+
+Our final point is to assess the relationship between the vehicle’s CAFV eligibility and the county of registration. We suspect that certain regions contain groups of people that may be more concerned about legal aspects or motives towards ending climate change, with CAFV eligibility being an indicator. We propose that environmental concern is more centralized rather than randomly distributed throughout Washington state. To test this hypothesis, we will compare a region vs. population density graph to a region vs. vehicles with CAFV eligibility. We will take a chi-square test to either accept or reject the null hypothesis.
+
+### Execution Plans (Metrics, Tools, and Plots)
+
+#### Plan for Q1: EV Powertrain Type vs. Population Density
+- **Metrics:** Number of BEVs by county, Number of PHEVs by county, population density by county
+- **Packages:** Will need `numpy` and `pandas` to sort the data, `scipy.stats` to perform statistical analysis, and `matplotlib.pyplot` for plotting.
+- **Plots:** Two histograms of the number of BEVs by county vs. county population density and the number of PHEVs by county vs. county population density.
+
+#### Plan for Q2: Model Popularity vs. Rated Electric Range
+- **Metrics:** Number of owned EVs by model and year, EV model ranges
+- **Packages:** `numpy` and `pandas` for data sorting, `scipy.stats` to perform statistical analysis, and `matplotlib.pyplot` for plotting.
+- **Plots:** A histogram of popularity vs. range bins.
+
+#### Plan for Q3: CAFV Eligibility vs. County of Registration
+- **Metrics:** CAFV status, County registration
+- **Packages:** `numpy` and `pandas` for data sorting, `scipy.stats` to perform statistical analysis, and `matplotlib.pyplot` for plotting.
+- **Plots:** A histogram of number of vehicles with CAFV status vs. county of registration.
+
+### Implementation Artifacts
+
+## Results: 
+
+## Conclusions: 
+
+## Actions that need to be completed:
+
+### Issues Faced by the Group
+
+## References (IEEE)
+
+[1] “State of Washington - Electric Vehicle Population Data,” Data.gov, 2026. https://catalog.data.gov/dataset/electric-vehicle-population-data?from_hint=eyJzb3J0IjoicG9wdWxhcml0eSJ9 (accessed Oct. 29, 2026).  
+[2] “WAOFM - Census - Population Density by County by Decade, 1900 To 2020,” Data.gov, July 06, 2023. http://catalog.data.gov/dataset/waofm-census-population-density-by-county-by-decade-1900-to-2020 (accessed Oct. 29, 2026).
