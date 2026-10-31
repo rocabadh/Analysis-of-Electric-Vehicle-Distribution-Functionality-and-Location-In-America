@@ -73,9 +73,7 @@ Our final point is to assess the relationship between the vehicle’s CAFV eligi
 
 ## Actions that need to be completed:
 
-### Issues Faced by the Group
-
-## References (IEEE)
+## References
 
 [1] “State of Washington - Electric Vehicle Population Data,” Data.gov, 2026. https://catalog.data.gov/dataset/electric-vehicle-population-data?from_hint=eyJzb3J0IjoicG9wdWxhcml0eSJ9 (accessed Oct. 29, 2026).  
 [2] “WAOFM - Census - Population Density by County by Decade, 1900 To 2020,” Data.gov, July 06, 2023. http://catalog.data.gov/dataset/waofm-census-population-density-by-county-by-decade-1900-to-2020 (accessed Oct. 29, 2026).
