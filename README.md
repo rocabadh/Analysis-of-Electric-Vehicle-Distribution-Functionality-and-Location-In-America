@@ -1,7 +1,7 @@
 # Electric Vehicle Population Data Analysis
 
 - Team Name: KDD16
-- Names of the Contributors: Diego Rocabado, Drew Cutright, Kieran Tennyson
+- Names of the Contributors: Diego Rocabado,  Cutright, Kieran Tennyson
 
 ## Objective and Motivation
 
