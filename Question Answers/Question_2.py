@@ -18,7 +18,7 @@ def main():
     df_valid=df[df["Electric Range"]>0]
 
     #Find top 5 most popular models 
-    model_count=df["Model"].value_counts()    
+    model_count=df_valid["Model"].value_counts()    
     top_5_models=model_count.head(5).index.tolist()
 
     #All unique models in a list
