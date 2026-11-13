@@ -1,0 +1,17 @@
+#checking csv data
+import pandas as pd
+
+
+path_to_file = "data/pop_dens_county.csv"
+
+#create dataframe
+df = pd.read_csv(path_to_file, skiprows = 5)
+
+#print first 15 rows of the dataframe
+print(df.head(15))
+
+#checking the column names
+print(df.columns)
+print(df[['County Name', 'Population Density 2026']].head(5)) # & df['Population Density 2026'].head(5))
+
+#I messed something up
