@@ -1,0 +1,9 @@
+# Ignore local dataset files
+Data/*.csv
+export.csv
+export_2.csv
+
+# Python environment and cache files
+__pycache__/
+.venv/
+venv/
