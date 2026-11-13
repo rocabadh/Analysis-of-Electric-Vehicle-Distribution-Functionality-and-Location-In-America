@@ -65,11 +65,44 @@ Our final point is to assess the relationship between the vehicle’s CAFV eligi
 - **Packages:** `numpy` and `pandas` for data sorting, `scipy.stats` to perform statistical analysis, and `matplotlib.pyplot` for plotting.
 - **Plots:** A histogram of number of vehicles with CAFV status vs. county of registration.
 
-### Implementation Artifacts
-
 ## Results: 
+### Question 2: Model Popularity vs. Rated Electric Range
+#### Data Filtering Note
+Out of 300,142 total vehicle registrations in `Data/export.csv`, 197,085 records had an `Electric Range` of `0` miles (the Washington State DOL stopped recording EPA range estimates for newer BEV models). Filtering to `Electric Range > 0` yielded **103,022 vehicles** with verified rated electric ranges (`38,726` in the Top 5 models and `64,296` in all other models).
+#### Command-Line Output (`Question_2.py`)
+```text
+----Top 5 Most Popular EV Models----
+Top 5 Models: ['MODEL 3', 'LEAF', 'RAV4 PRIME (PHEV)', 'MODEL S', 'BOLT EV']
+----Overall Group Statistics----
+Top 5 Models: Mean=177.3229613179776, STD=84.3636650762329
+Other Models: Mean=61.92282568122434, STD=74.87350444759443
+----One-Sided Two Sample T-Test----
+Significance Level (Alpha): 0.05
+T-Statistic: 221.68760466153347
+T-Test P-Value: 0.0
+T-Test Decision: Reject Null Hypothesis: Top 5 Models have a significantly higher electric range.
+----Chi-Square Test on Electric Range Bins---
+Range Bins: ['Short (<50 miles)', 'Medium (50-200 miles)', 'Long (>200 miles)']
+Observed (Top 5): [ 4872  9939 23915]
+Observed (Other): [48288  8228  7780]
+Expected(Top 5): [19982.85958339  6828.9806255  11914.15979111]
+Chi-Square Statistic: 24931.197139234486
+Chi-Square P-Value: 0.0
+Chi-Square Decision: Reject Null Hypothesis: Bin counts for top 5 models differ from expected
+```
+#### Question 2 Script & Artifacts
+- **Python Script:** [`Question Answers/Question_2.py`](Question%20Answers/Question_2.py)
+- **Generated Plots:**
+
+![Normalized Distribution of Rated Electric Range](Question%20Answers/q2_range_histogram.png)
+
+![EV Range Bin Distribution: Top 5 Models vs. Other Models](Question%20Answers/q2_range_bins_bar.png)
 
 ## Conclusions: 
+### Question 2: Model Popularity vs. Rated Electric Range
+* **Popular EVs Have Much Longer Range:** The top five most popular EV models (`MODEL 3`, `LEAF`, `RAV4 PRIME (PHEV)`, `MODEL S`, and `BOLT EV`) average **177.3 miles** of rated electric range, nearly triple the **61.9-mile** average of all other models. Because the one-sided t-test gave a p-value well below $\alpha = 0.05$ ($t = 221.69, p < 0.0001$), we **reject the null hypothesis** and confirm that top-selling models have significantly higher electric range.
+* **Buyers Strongly Prefer Long-Range EVs:** The chi-square test across range categories also gave a p-value well below $\alpha = 0.05$ ($\chi^2 = 24,931.20, p < 0.0001$), so we **reject the null hypothesis** that range and popularity are unrelated. Over **61.8%** of top-five vehicles fall into the **Long Range (>200 miles)** category, whereas **75.1%** of all other vehicles are **Short Range (<50 miles)** plug-in hybrids.
+* **Key Takeaway:** Driving range is a major factor behind EV adoption in Washington State. Vehicles offering more than 200 miles per charge make up the majority of the most popular models on the road.
 
 ## Actions that need to be completed:
 
